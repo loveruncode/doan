@@ -5,9 +5,10 @@ from database.datatable import get_db, engine
 from models.models import Province
 from models.models import Admin
 from pydantic import BaseModel
-
+from Middleware.cors import setup_cors
 
 app = FastAPI()
+setup_cors(app)
 
 class ProvinceOut(BaseModel):
     name: str
